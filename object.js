@@ -1,0 +1,5 @@
+const newObj = {
+    navn: "per",
+    alder: 23,
+    gammel: false
+}
