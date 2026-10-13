@@ -1,0 +1,14 @@
+#cardDisplay > div {
+    border: 1px solid black;
+    border-radius: 5px;
+    border-radius: 2px;
+
+    padding: 12px 10px;
+}
+#cardDisplay {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
