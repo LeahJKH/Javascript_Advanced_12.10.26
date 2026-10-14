@@ -10,8 +10,10 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url("../img/bg.jpg");
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     background-size: cover;
+    background-position: top;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #login-Form {
     background-color: rgb(240, 240, 240);

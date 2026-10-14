@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    <h1 id="welcomeMsg">Hei</h1>
-    <main>
+    <header id="header">
+        <h1 id="welcomeMsg">Hei</h1>
         <form id="taskForm">
             <label for="task">
                 Task name:
@@ -23,8 +23,11 @@
                 is done?
                 <input type="checkbox" name="done"/>
             </label>
-            <button type="submit">Click</button>
+            <button type="submit" class="btn">send task</button>
         </form>
+    </header>
+
+    <main>
 
         <section id="cardDisplay">
 
