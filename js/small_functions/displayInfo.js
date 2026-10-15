@@ -1,10 +1,16 @@
+import {deleteCard} from './deleteCard.js'
+import {refreshlocal} from './refreshLocal.js'
 const displayArea = document.querySelector("#cardDisplay")
 
-export function displayInfo() {
+export function displayInfo(taskListed) {
 
-    let allTaskList = JSON.parse(localStorage.getItem("tasklist"))
+    while (displayArea.firstChild) {
+        displayArea.removeChild(displayArea.firstChild)
+    }
 
-    allTaskList.forEach(e => {
+
+    taskListed.forEach(e => {
+        const CardId = e.id
         const div = document.createElement("div")
         const h3 = document.createElement("h3")
         const p = document.createElement("p")
@@ -12,7 +18,7 @@ export function displayInfo() {
 
         btn.textContent = "Slett"
         btn.addEventListener("click", () => {
-            console.log("hei hei")
+            deleteCard(CardId)
         })
 
         const h3Txt = document.createTextNode(e.task)
@@ -24,7 +30,26 @@ export function displayInfo() {
         input.type = "checkbox"
         if (e.done == "on") {
             input.checked = true
+
+        } else {
+
+
         }
+        let item = e;
+        input.addEventListener("click", (e) => {
+            if(item.done == "on") {
+                item.done = "off"
+                input.checked = false
+                console.log(item)
+            } else if (item.done == "off"){
+                item.done = "on"
+                input.checked = true
+                console.log(item)
+            } else {
+                console.log("problem")
+            }
+            refreshlocal(CardId, item)
+        })
 
         const labelTxt = document.createTextNode("is done?: ")
 
